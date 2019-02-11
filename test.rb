@@ -1,13 +1,9 @@
 require_relative 'manage_csv'
 
 manager = ManageCSV.new('./cities.csv')
-
-manager.read
-
 structs = manager.structs
 
-p structs
-#proc neighbors = -> (city) { city.neighborhoods }
+neighbors = -> (city) { city.neighborhoods.map(&:name) }
 
-#puts neighbors(structs.first)
+puts neighbors.call(structs.first)
 

@@ -8,7 +8,7 @@ class City
       self.class.send(:attr_accessor, key.snakecase)
     end
     neighborhoods = JSON.parse(@neighborhoods)
-    @neighborhoods = neighborhoods.map { |neighbor| Neighbor.new(*neighbor) }
+    @neighborhoods = neighborhoods.map { |neighbor| Neighbor.new(neighbor) }
   end
 
 end

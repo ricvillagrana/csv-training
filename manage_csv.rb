@@ -7,11 +7,7 @@ class ManageCSV
 
   def initialize(file = nil)
     @file = file
-  end
-
-  def read
-    result = CSV.read(@file, headers: true).to_a
-    @headers, *@rows = result
+    @headers, *@rows = CSV.read(@file, headers: true).to_a
   end
 
   def structs
