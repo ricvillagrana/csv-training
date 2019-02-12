@@ -11,4 +11,8 @@ class City
     @neighborhoods = neighborhoods.map { |neighbor| Neighbor.new(neighbor) }
   end
 
+  def neighbors
+
+  end
+
 end
