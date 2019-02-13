@@ -48,3 +48,5 @@ LatD,LatM,LatS,NS,LonD,LonM,LonS,EW,City,State,neighborhoods
 44,45,35,N,85,37,47,W,Traverse City,MI,"[{""name"": ""Harbor"", ""habitans"": ""9000""}, {""name"": ""Beach"", ""habitans"": ""1900""}, {""name"": ""Bay"", ""habitans"": ""3900""}]"
 43,39,0,N,79,22,47,W,Toronto,ON,"[{""name"": ""San"", ""habitans"": ""4000""}, {""name"": ""Cove"", ""habitans"": ""4900""}, {""name"": ""Gardens"", ""habitans"": ""4999""}]"
 39,2,59,N,95,40,11,W,Topeka,KS,"[{""name"": ""Hills"", ""habitans"": ""1000""}, {""name"": ""Island"", ""habitans"": ""10000""}, {""name"": ""Village"", ""habitans"": ""3000""}]"
+,,,,,,,,Colima,Colima,[]
+,,,,,,,,Villa de Álvarez,Colima,[]

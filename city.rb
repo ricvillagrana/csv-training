@@ -1,25 +1,28 @@
 require 'snake_camel'
 require_relative './neighbor'
 
-#class City
-  #def initialize(attrs)
-    #attrs.each do |key, value|
-      #self.instance_variable_set("@#{key.snakecase}", value)
-      #self.class.send(:attr_accessor, key.snakecase)
-    #end
-    #neighborhoods = JSON.parse(@neighborhoods)
-    #@neighborhoods = neighborhoods.map { |neighbor| Neighbor.new(neighbor) }
-  #end
-#end
-
 City = Class.new do
   def initialize(attrs)
     attrs.each do |key, value|
       self.class.send(:attr_accessor, key.snakecase)
       self.instance_variable_set("@#{key.snakecase}", value)
     end
-    neighborhoods = JSON.parse(@neighborhoods)
-    @neighborhoods = neighborhoods.map { |neighbor| Neighbor.new(neighbor) }
+    parse_neighborhoods(@neighborhoods)
+  end
+
+  def parse_neighborhoods(data)
+    arr = JSON.parse(data) if data.is_a?(String)
+    @neighborhoods = arr.nil? ? [] : arr.map do |neighbor|
+      Neighbor.new(neighbor)
+    end
+  end
+
+  def to_a
+    self.instance_variables.map do |v|
+      v.to_s[1..-1]
+    end.map do |variable|
+      self.send(variable)
+    end
   end
 end
 
