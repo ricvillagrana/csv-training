@@ -1,3 +1,4 @@
+require 'pry'
 require_relative 'manage_csv'
 
 manager = ManageCSV.new('./cities.csv')
