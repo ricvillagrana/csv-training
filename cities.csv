@@ -50,3 +50,4 @@ LatD,LatM,LatS,NS,LonD,LonM,LonS,EW,City,State,neighborhoods
 39,2,59,N,95,40,11,W,Topeka,KS,"[{""name"": ""Hills"", ""habitans"": ""1000""}, {""name"": ""Island"", ""habitans"": ""10000""}, {""name"": ""Village"", ""habitans"": ""3000""}]"
 ,,,,,,,,Colima,Colima,[]
 ,,,,,,,,Villa de Álvarez,Colima,[]
+,,,,,,,,Villa de Álvarez,Colima,"[{""name"":""El trapiche"",""habitans"":3}]"

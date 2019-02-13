@@ -11,7 +11,7 @@ City = Class.new do
   end
 
   def parse_neighborhoods(data)
-    arr = JSON.parse(data) if data.is_a?(String)
+    arr = data.is_a?(String) ? JSON.parse(data) : data
     @neighborhoods = arr.nil? ? [] : arr.map do |neighbor|
       Neighbor.new(neighbor)
     end
@@ -21,7 +21,8 @@ City = Class.new do
     self.instance_variables.map do |v|
       v.to_s[1..-1]
     end.map do |variable|
-      self.send(variable)
+      data = self.send(variable)
+      data.is_a?(Array) ? data.map(&:to_a).to_s : data
     end
   end
 end

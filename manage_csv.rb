@@ -15,9 +15,8 @@ class ManageCSV
   end
 
   def append(city)
-    city.neighborhoods = JSON.generate(city.neighborhoods)
-    @rows << match_headers(city)
     CSV.open(@file, 'wb') do |csv|
+      @rows << match_headers(city)
       csv << @headers
       @rows.each { |row| csv << row }
     end if city.is_a?(City)
@@ -28,7 +27,7 @@ class ManageCSV
   def match_headers(city)
     @headers.map(&:snakecase).map do |header|
       data = city.send(header)
-      data.is_a?(String) || data.nil? ? data : JSON.generate(data)
+      data.is_a?(Array) ? JSON.generate(data.map(&:to_h)) : data
     end
   end
 end
