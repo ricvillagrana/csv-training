@@ -51,3 +51,10 @@ LatD,LatM,LatS,NS,LonD,LonM,LonS,EW,City,State,neighborhoods
 ,,,,,,,,Colima,Colima,[]
 ,,,,,,,,Villa de Álvarez,Colima,[]
 ,,,,,,,,Villa de Álvarez,Colima,"[{""name"":""El trapiche"",""habitans"":3}]"
+,,,,,,,,Colima,Colima,"[{""name"":0,""habitans"":3},{""name"":""El trapiche"",""habitans"":3}]"
+,,,,,,,,Colima,Colima,"[{""name"":0,""habitans"":3},{""name"":""El trapiche"",""habitans"":3}]"
+,,,,,,,,Colima,Colima,"[{""name"":0,""habitans"":3}]"
+,,,,,,,,Colima,Colima,"[{""name"":0,""habitans"":3}]"
+,,,,,,,,Colima,Colima,"[{""name"":""El trapiche"",""habitans"":3}]"
+,,,,,,,,Colima,Colima,"[{""name"":""El trapicheeeeeee"",""habitans"":3},{""name"":""El trapiche"",""habitans"":3}]"
+,,,,,,,,Colima,Colima,"[{""name"":""El trapiche 2"",""habitans"":3},{""name"":""El trapiche"",""habitans"":3}]"

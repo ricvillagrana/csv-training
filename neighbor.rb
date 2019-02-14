@@ -1,8 +1,8 @@
 Neighbor = Class.new do
   def initialize(attrs)
     attrs.each do |key, value|
-      self.class.send(:attr_accessor, key.snakecase)
-      self.instance_variable_set("@#{key.snakecase}", /\d+/.match(value.to_s) ? value.to_i : value)
+      self.class.send(:attr_accessor, key.to_s.snakecase)
+      self.instance_variable_set("@#{key.to_s.snakecase}", /^\d+$/.match(value.to_s) ? value.to_i : value)
     end
   end
 

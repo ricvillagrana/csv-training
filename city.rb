@@ -18,12 +18,16 @@ City = Class.new do
   end
 
   def to_a
-    self.instance_variables.map do |v|
-      v.to_s[1..-1]
-    end.map do |variable|
+    instance_vars.map do |variable|
       data = self.send(variable)
       data.is_a?(Array) ? data.map(&:to_a).to_s : data
     end
+  end
+
+  private
+
+  def instance_vars
+    self.instance_variables.map { |v| v.to_s[1..-1] }
   end
 end
 

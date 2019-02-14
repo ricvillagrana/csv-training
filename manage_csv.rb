@@ -7,14 +7,26 @@ class ManageCSV
 
   def initialize(file = nil)
     @file = file
-    @headers, *@rows = CSV.read(@file, headers: true).to_a
+    begin
+      raise 'The file does not exist.' unless File.exist?(@file)
+      @headers, *@rows = CSV.read(@file, headers: true).to_a
+    rescue Exception => error
+      puts error
+      @file = nil
+    end
   end
 
   def structs
-    rows.map { |row| City.new(Hash[headers.zip(row)]) }
+    begin
+      raise 'File not found, please set a valid file' if @file.nil?
+      rows.map { |row| City.new(Hash[headers.zip(row)]) }
+    rescue Exception => error
+      puts error
+    end
   end
 
   def append(city)
+    puts 'File not found, you cannot append to nil file'; return if @file.nil?
     CSV.open(@file, 'wb') do |csv|
       @rows << match_headers(city)
       csv << @headers
