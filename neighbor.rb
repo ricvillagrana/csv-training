@@ -1,3 +1,5 @@
+require 'snake_camel'
+
 Neighbor = Class.new do
   def initialize(attrs)
     attrs.each do |key, value|
@@ -7,7 +9,7 @@ Neighbor = Class.new do
   end
 
   def to_h
-    headers = self.instance_variables.map { |v| v.to_s[1..-1] }
+    headers = self.instance_variables.map { |v| v.to_s[1..-1].to_sym }
     Hash[headers.zip(headers.map { |h| self.send(h) })]
   end
 end

@@ -3,10 +3,14 @@ class ManageCSV
   require 'csv'
   require 'json'
 
-  attr_reader :headers, :rows
+  attr_accessor :file, :headers, :rows
 
   def initialize(file = nil)
     @file = file
+    fetch_file
+  end
+
+  def fetch_file
     begin
       raise 'The file does not exist.' unless File.exist?(@file)
       @headers, *@rows = CSV.read(@file, headers: true).to_a
